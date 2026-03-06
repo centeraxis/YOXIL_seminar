@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YOXIL流 採用マーケティングセミナー｜活躍人財を狙って採る</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:    #0D1F35;
+  --navy2:   #1A3A5C;
+  --teal:    #0080A0;
+  --mint:    #00B4D8;
+  --gold:    #F5A623;
+  --gold2:   #FFD166;
+  --white:   #FFFFFF;
+  --offwhite:#F0F6FA;
+  --lgray:   #C8D8E4;
+  --gray:    #6B7E8E;
+  --Y: #1A3A5C;
+  --O: #1A5C4A;
+  --X: #0080A0;
+  --I: #7A4A20;
+  --L: #5C1A5C;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ── UTILITY ── */
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+.gold { color: var(--gold); }
+.mint { color: var(--mint); }
+.teal { color: var(--teal); }
+
+/* ── REVEAL ANIMATION ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.22s; }
+.reveal-delay-3 { transition-delay: 0.34s; }
+.reveal-delay-4 { transition-delay: 0.46s; }
+.reveal-delay-5 { transition-delay: 0.58s; }
+
+/* ══════════════════════════════════════════════
+   HEADER NAV
+══════════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(13,31,53,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,128,160,0.25);
+  height: 60px;
+  display: flex; align-items: center;
+}
+nav .nav-inner {
+  max-width: 960px; margin: 0 auto; padding: 0 24px;
+  width: 100%;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo {
+  font-family: 'Space Mono', monospace;
+  font-size: 15px; font-weight: 700; letter-spacing: 2px;
+  color: var(--teal);
+}
+.nav-logo span { color: var(--gold); }
+.nav-cta {
+  background: var(--gold);
+  color: var(--navy); font-weight: 700; font-size: 13px;
+  padding: 8px 20px; border-radius: 3px;
+  text-decoration: none; letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.1s;
+}
+.nav-cta:hover { background: var(--gold2); transform: scale(1.03); }
+
+/* ══════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+/* Grid dot background */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0,128,160,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(90,26,92,0.22) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(245,166,35,0.06) 0%, transparent 60%);
+}
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(0,180,216,0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+.hero-inner {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 960px; margin: 0 auto; padding: 80px 24px 60px;
+}
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(0,128,160,0.2);
+  border: 1px solid rgba(0,128,160,0.5);
+  border-radius: 2px;
+  padding: 5px 14px;
+  font-size: 12px; font-weight: 500; letter-spacing: 1.5px; color: var(--mint);
+  margin-bottom: 28px;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+}
+.hero-tag::before {
+  content: ''; width: 6px; height: 6px; background: var(--mint);
+  border-radius: 50%; animation: blink 1.6s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+.hero-eyebrow {
+  font-size: 14px; color: var(--lgray); letter-spacing: 0.5px; margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.hero-h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.4;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+.hero-h1 .accent-line {
+  display: block;
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero-lead {
+  font-size: clamp(15px, 2vw, 17px);
+  line-height: 1.9;
+  color: var(--lgray);
+  max-width: 620px;
+  margin-bottom: 40px;
+}
+
+/* Seminar meta pills */
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  margin-bottom: 40px;
+}
+.meta-pill {
+  display: flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 3px; padding: 8px 16px;
+  font-size: 13px; font-weight: 500;
+}
+.meta-pill .pill-icon { font-size: 16px; }
+.meta-pill strong { color: var(--gold); margin-right: 2px; }
+
+.hero-cta-group { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy); font-weight: 900; font-size: 16px;
+  padding: 16px 36px; border-radius: 3px;
+  text-decoration: none; letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px rgba(245,166,35,0.35);
+}
+.btn-primary:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(245,166,35,0.45); }
+.btn-secondary {
+  color: var(--lgray); font-size: 14px; text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s;
+}
+.btn-secondary:hover { color: var(--white); }
+.btn-secondary::after { content: '↓'; }
+
+/* Scroll hint */
+.scroll-hint {
+  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: var(--gray); font-size: 11px; letter-spacing: 1px;
+  animation: float 2.4s ease-in-out infinite;
+}
+.scroll-hint::after { content: ''; width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gray), transparent); }
+@keyframes float { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+/* ══════════════════════════════════════════════
+   PAIN SECTION
+══════════════════════════════════════════════ */
+.pain {
+  background: var(--navy2);
+  padding: 96px 0;
+  border-top: 1px solid rgba(0,128,160,0.2);
+  border-bottom: 1px solid rgba(0,128,160,0.2);
+}
+.section-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(24px, 3.5vw, 38px);
+  font-weight: 700; line-height: 1.5; margin-bottom: 16px;
+}
+.section-lead {
+  font-size: 15px; color: var(--lgray); line-height: 1.8; max-width: 600px;
+  margin-bottom: 52px;
+}
+
+.pain-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+@media(max-width:680px){ .pain-grid { grid-template-columns: 1fr; } }
+
+.pain-card {
+  background: var(--navy);
+  border: 1px solid rgba(0,128,160,0.2);
+  border-top: 3px solid var(--teal);
+  padding: 28px 24px;
+  border-radius: 2px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.pain-card:hover { border-color: var(--teal); transform: translateY(-4px); }
+.pain-card .num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 48px; color: rgba(0,128,160,0.25);
+  line-height: 1; margin-bottom: 12px;
+}
+.pain-card h3 {
+  font-size: 18px; font-weight: 700; color: var(--gold); margin-bottom: 10px;
+}
+.pain-card p { font-size: 13px; color: var(--lgray); line-height: 1.8; }
+
+.pain-footer {
+  margin-top: 40px; padding: 24px 28px;
+  background: rgba(0,128,160,0.1);
+  border: 1px solid rgba(0,128,160,0.35);
+  border-radius: 2px;
+  display: flex; align-items: center; gap: 16px;
+}
+.pain-footer .arrow { font-size: 22px; color: var(--teal); flex-shrink: 0; }
+.pain-footer p { font-size: 15px; color: var(--white); line-height: 1.7; }
+.pain-footer strong { color: var(--mint); }
+
+/* ══════════════════════════════════════════════
+   ROOT CAUSE
+══════════════════════════════════════════════ */
+.rootcause {
+  padding: 96px 0;
+  background: var(--navy);
+}
+.quote-block {
+  text-align: center;
+  padding: 56px 24px;
+  position: relative;
+}
+.quote-block::before {
+  content: '"';
+  font-family: 'DM Serif Display', serif;
+  font-size: 180px; line-height: 0.6;
+  color: rgba(0,128,160,0.12);
+  position: absolute; top: 40px; left: 50%; transform: translateX(-50%);
+  pointer-events: none;
+}
+.quote-main {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 700; line-height: 1.6;
+  position: relative; z-index: 1;
+  margin-bottom: 20px;
+}
+.quote-main em {
+  font-style: normal;
+  color: var(--gold);
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.quote-sub {
+  font-size: 15px; color: var(--lgray); line-height: 1.9; max-width: 580px; margin: 0 auto;
+}
+
+/* 5 know items */
+.know-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+  margin-top: 52px;
+}
+@media(max-width:700px){ .know-grid { grid-template-columns: 1fr 1fr; } }
+
+.know-card {
+  padding: 20px 14px;
+  border-radius: 2px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.know-card:hover { transform: translateY(-5px); }
+.know-card .kc-letter {
+  font-family: 'DM Serif Display', serif;
+  font-size: 44px; font-weight: 700; line-height: 1;
+  margin-bottom: 10px;
+  display: block;
+}
+.know-card .kc-know {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+  color: var(--gold); margin-bottom: 6px;
+}
+.know-card .kc-desc {
+  font-size: 11px; color: rgba(255,255,255,0.65); line-height: 1.6;
+}
+.kc-y { background: linear-gradient(160deg, var(--Y), #0a1e32); }
+.kc-o { background: linear-gradient(160deg, var(--O), #0a2e1e); }
+.kc-x { background: linear-gradient(160deg, var(--X), #003d55); }
+.kc-i { background: linear-gradient(160deg, var(--I), #3a2010); }
+.kc-l { background: linear-gradient(160deg, var(--L), #2e082e); }
+.kc-y .kc-letter { color: #4ab4e0; }
+.kc-o .kc-letter { color: #4ae0b4; }
+.kc-x .kc-letter { color: #e0f4ff; }
+.kc-i .kc-letter { color: #f5a05a; }
+.kc-l .kc-letter { color: #d4a8da; }
+
+/* ══════════════════════════════════════════════
+   FRAMEWORK CHAIN
+══════════════════════════════════════════════ */
+.framework {
+  padding: 96px 0;
+  background: var(--navy2);
+  border-top: 1px solid rgba(0,128,160,0.2);
+}
+
+.chain-row {
+  display: flex; gap: 0; margin-top: 48px;
+}
+@media(max-width:700px){
+  .chain-row { flex-direction: column; }
+  .chain-arrow { transform: rotate(90deg); margin: 4px auto; }
+}
+
+.chain-item {
+  flex: 1;
+  padding: 24px 16px;
+  border-radius: 2px;
+  text-align: center;
+  cursor: default;
+  transition: transform 0.2s;
+}
+.chain-item:hover { transform: scale(1.03); }
+.chain-item .ci-letter {
+  font-family: 'DM Serif Display', serif;
+  font-size: 52px; font-weight: 700; line-height: 1;
+  display: block; margin-bottom: 6px;
+}
+.chain-item .ci-en1 { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); display: block; }
+.chain-item .ci-en2 { font-size: 12px; color: rgba(255,255,255,0.55); display: block; margin-bottom: 8px; }
+.chain-item .ci-jp { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 8px; display: block; }
+.chain-item .ci-know {
+  display: inline-block;
+  font-size: 10px; font-weight: 700; color: var(--gold);
+  background: rgba(245,166,35,0.15); border: 1px solid rgba(245,166,35,0.4);
+  padding: 2px 8px; border-radius: 2px;
+  letter-spacing: 0.3px;
+}
+
+.chain-arrow {
+  display: flex; align-items: center;
+  color: rgba(255,255,255,0.2); font-size: 20px; flex-shrink: 0; padding: 0 2px;
+}
+
+.ci-y { background: linear-gradient(160deg, #1e4270, #0a1e32); }
+.ci-o { background: linear-gradient(160deg, #1d6a53, #0a2e1e); }
+.ci-x { background: linear-gradient(160deg, #006e8a, #003d55); }
+.ci-i { background: linear-gradient(160deg, #8a5525, #3a2010); }
+.ci-l { background: linear-gradient(160deg, #6a1e6a, #2e082e); }
+
+/* Chain summary */
+.chain-summary {
+  margin-top: 40px; padding: 28px 32px;
+  background: rgba(0,128,160,0.08);
+  border: 1px solid rgba(0,128,160,0.3);
+  border-radius: 2px;
+  text-align: center;
+}
+.chain-summary p { font-size: 15px; color: var(--lgray); line-height: 1.9; }
+.chain-summary strong { color: var(--white); }
+
+/* ══════════════════════════════════════════════
+   LEARN
+══════════════════════════════════════════════ */
+.learn {
+  padding: 96px 0;
+  background: var(--navy);
+}
+.learn-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  margin-top: 48px;
+}
+@media(max-width:640px){ .learn-grid { grid-template-columns: 1fr; } }
+
+.learn-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px; padding: 28px 24px;
+  display: flex; gap: 16px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.learn-card:hover { background: rgba(0,128,160,0.08); border-color: rgba(0,128,160,0.3); }
+.learn-card .lc-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  background: rgba(0,128,160,0.2);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.learn-card h4 { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.learn-card p { font-size: 13px; color: var(--lgray); line-height: 1.7; }
+
+/* ══════════════════════════════════════════════
+   SOCIAL PROOF
+══════════════════════════════════════════════ */
+.proof {
+  padding: 96px 0;
+  background: var(--navy2);
+  border-top: 1px solid rgba(0,128,160,0.2);
+}
+.stats-row {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+  margin-bottom: 52px;
+  background: rgba(0,128,160,0.15);
+  border: 1px solid rgba(0,128,160,0.2);
+  border-radius: 2px; overflow: hidden;
+}
+@media(max-width:560px){ .stats-row { grid-template-columns: 1fr; } }
+
+.stat-block {
+  text-align: center; padding: 36px 20px;
+  background: var(--navy);
+  transition: background 0.2s;
+}
+.stat-block:hover { background: rgba(0,128,160,0.1); }
+.stat-block .stat-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 48px; color: var(--gold); line-height: 1; display: block; margin-bottom: 6px;
+}
+.stat-block .stat-label { font-size: 12px; color: var(--lgray); line-height: 1.5; }
+
+.voice-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+@media(max-width:600px){ .voice-grid { grid-template-columns: 1fr; } }
+
+.voice-card {
+  background: var(--navy);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 2px; padding: 24px;
+  position: relative;
+}
+.voice-card::before {
+  content: '"';
+  font-family: 'DM Serif Display', serif;
+  font-size: 64px; line-height: 0.5;
+  color: rgba(0,128,160,0.25);
+  position: absolute; top: 18px; left: 18px;
+}
+.voice-card p {
+  font-size: 14px; color: var(--lgray); line-height: 1.8;
+  padding-top: 20px; padding-left: 16px;
+}
+.voice-card .voice-meta {
+  margin-top: 14px; font-size: 12px; color: var(--gray);
+  display: flex; align-items: center; gap: 6px;
+}
+.voice-card .voice-meta::before { content: '—'; }
+
+/* ══════════════════════════════════════════════
+   SPEAKER
+══════════════════════════════════════════════ */
+.speaker {
+  padding: 96px 0;
+  background: var(--navy);
+}
+.speaker-inner {
+  display: grid; grid-template-columns: 180px 1fr; gap: 48px; align-items: start;
+}
+@media(max-width:600px){ .speaker-inner { grid-template-columns: 1fr; } }
+
+.speaker-avatar {
+  width: 160px; height: 160px; border-radius: 3px;
+  background: linear-gradient(135deg, var(--navy2), var(--teal));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 64px;
+  border: 2px solid rgba(0,128,160,0.35);
+  flex-shrink: 0;
+}
+.speaker-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 26px; font-weight: 700; margin-bottom: 4px;
+}
+.speaker-title { font-size: 13px; color: var(--teal); margin-bottom: 20px; letter-spacing: 0.5px; }
+.speaker-bio { font-size: 14px; color: var(--lgray); line-height: 1.9; margin-bottom: 20px; }
+.speaker-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.speaker-tag {
+  font-size: 11px; color: var(--mint);
+  background: rgba(0,180,216,0.12); border: 1px solid rgba(0,180,216,0.3);
+  padding: 3px 10px; border-radius: 2px; letter-spacing: 0.3px;
+}
+
+/* ══════════════════════════════════════════════
+   SEMINAR DETAILS
+══════════════════════════════════════════════ */
+.details {
+  padding: 96px 0;
+  background: var(--navy2);
+  border-top: 1px solid rgba(0,128,160,0.2);
+}
+.detail-box {
+  background: var(--navy);
+  border: 1px solid rgba(0,128,160,0.25);
+  border-radius: 2px; overflow: hidden;
+  margin-top: 40px;
+}
+.detail-row {
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.detail-row:last-child { border-bottom: none; }
+.detail-label {
+  width: 160px; flex-shrink: 0;
+  padding: 18px 24px;
+  background: rgba(0,128,160,0.1);
+  font-size: 13px; font-weight: 700; color: var(--teal);
+  display: flex; align-items: center;
+  border-right: 1px solid rgba(0,128,160,0.15);
+}
+.detail-value {
+  padding: 18px 24px; flex: 1;
+  font-size: 14px; color: var(--white); line-height: 1.7;
+}
+.detail-value strong { color: var(--gold); }
+.detail-value .free { color: var(--mint); font-weight: 700; font-size: 18px; }
+
+/* ══════════════════════════════════════════════
+   CTA / REGISTRATION FORM
+══════════════════════════════════════════════ */
+.cta-section {
+  padding: 96px 0;
+  background: var(--navy);
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 30% 50%, rgba(0,128,160,0.15) 0%, transparent 55%),
+    radial-gradient(circle at 75% 30%, rgba(245,166,35,0.08) 0%, transparent 50%);
+}
+.cta-inner { position: relative; z-index: 1; }
+
+.cta-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(245,166,35,0.15); border: 1px solid rgba(245,166,35,0.4);
+  padding: 6px 16px; border-radius: 2px;
+  font-size: 12px; font-weight: 700; color: var(--gold);
+  letter-spacing: 1px; margin-bottom: 24px;
+}
+
+.cta-h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(26px, 4vw, 40px); font-weight: 700; line-height: 1.5;
+  margin-bottom: 12px;
+}
+.cta-sub { font-size: 15px; color: var(--lgray); margin-bottom: 48px; line-height: 1.8; }
+
+/* Form card */
+.form-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(0,128,160,0.3);
+  border-radius: 4px; padding: 48px 40px;
+  max-width: 600px;
+}
+@media(max-width:560px){ .form-card { padding: 32px 20px; } }
+
+.form-title {
+  font-size: 18px; font-weight: 700; margin-bottom: 28px;
+  padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; gap: 10px;
+}
+.form-title span { color: var(--mint); }
+
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block; font-size: 12px; font-weight: 700; color: var(--lgray);
+  margin-bottom: 6px; letter-spacing: 0.5px;
+}
+.form-group label .required {
+  color: var(--gold); margin-left: 4px; font-size: 11px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 3px; padding: 12px 16px;
+  color: var(--white); font-family: 'Noto Sans JP', sans-serif; font-size: 14px;
+  transition: border-color 0.2s, background 0.2s;
+  outline: none;
+  -webkit-appearance: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal);
+  background: rgba(0,128,160,0.08);
+}
+.form-group select option { background: var(--navy); }
+.form-group textarea { height: 90px; resize: vertical; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media(max-width:460px){ .form-row { grid-template-columns: 1fr; } }
+
+.form-submit {
+  width: 100%; padding: 18px;
+  background: var(--gold); color: var(--navy);
+  font-family: 'Noto Sans JP', sans-serif; font-size: 16px; font-weight: 900;
+  border: none; border-radius: 3px; cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(245,166,35,0.3);
+  margin-top: 8px;
+}
+.form-submit:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,166,35,0.4); }
+
+.form-note {
+  font-size: 12px; color: var(--gray); text-align: center; margin-top: 14px; line-height: 1.7;
+}
+.form-note a { color: var(--teal); text-decoration: none; }
+
+/* Bonus badge */
+.bonus-box {
+  margin-top: 24px; padding: 18px 20px;
+  background: rgba(245,166,35,0.08);
+  border: 1px solid rgba(245,166,35,0.3);
+  border-radius: 3px;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.bonus-box .bonus-icon { font-size: 22px; flex-shrink: 0; line-height: 1; }
+.bonus-box p { font-size: 13px; color: var(--lgray); line-height: 1.7; }
+.bonus-box strong { color: var(--gold); }
+
+/* ══════════════════════════════════════════════
+   FAQ
+══════════════════════════════════════════════ */
+.faq {
+  padding: 96px 0;
+  background: var(--navy2);
+  border-top: 1px solid rgba(0,128,160,0.15);
+}
+.faq-list { margin-top: 40px; }
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.faq-q {
+  width: 100%; text-align: left;
+  background: none; border: none; color: var(--white); cursor: pointer;
+  padding: 22px 0;
+  font-family: 'Noto Sans JP', sans-serif; font-size: 15px; font-weight: 700;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--mint); }
+.faq-q .q-prefix { color: var(--teal); margin-right: 8px; font-family: 'Space Mono', monospace; }
+.faq-q .faq-chevron {
+  flex-shrink: 0; width: 22px; height: 22px;
+  border: 1px solid rgba(255,255,255,0.15); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; transition: transform 0.3s, border-color 0.2s;
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); border-color: var(--teal); }
+.faq-a {
+  display: none; padding: 0 0 22px 0;
+  font-size: 14px; color: var(--lgray); line-height: 1.9;
+  padding-left: 26px;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ══════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════ */
+footer {
+  background: #060f1c;
+  border-top: 1px solid rgba(0,128,160,0.15);
+  padding: 48px 0 32px;
+  text-align: center;
+}
+.footer-logo {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px; font-weight: 700; letter-spacing: 3px;
+  color: var(--teal); margin-bottom: 8px;
+}
+.footer-logo span { color: var(--gold); }
+.footer-copy { font-size: 12px; color: var(--gray); margin-top: 20px; }
+
+/* ══════════════════════════════════════════════
+   SUCCESS MESSAGE
+══════════════════════════════════════════════ */
+.success-msg {
+  display: none;
+  background: rgba(0,180,100,0.1); border: 1px solid rgba(0,180,100,0.4);
+  border-radius: 3px; padding: 20px 24px;
+  text-align: center; margin-top: 16px;
+  font-size: 15px; color: #4ae0a0; font-weight: 700;
+}
+.success-msg.show { display: block; }
+
+/* ══════════════════════════════════════════════
+   STICKY CTA BAR
+══════════════════════════════════════════════ */
+.sticky-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+  background: var(--navy2);
+  border-top: 2px solid var(--teal);
+  padding: 12px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.sticky-bar.show { transform: translateY(0); }
+.sticky-bar p { font-size: 13px; color: var(--lgray); }
+.sticky-bar strong { color: var(--white); display: block; font-size: 15px; }
+.sticky-bar a {
+  background: var(--gold); color: var(--navy);
+  font-weight: 900; font-size: 14px;
+  padding: 10px 24px; border-radius: 3px;
+  text-decoration: none; flex-shrink: 0;
+  transition: background 0.2s;
+}
+.sticky-bar a:hover { background: var(--gold2); }
+@media(max-width:500px){ .sticky-bar p { display: none; } }
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">YOXIL<span>.</span>WORKS</div>
+    <a href="#register" class="nav-cta">今すぐ申し込む →</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">RECRUITMENT MARKETING SEMINAR</div>
+    <p class="hero-eyebrow reveal">採用に悩む中小企業経営者・人事担当者の方へ</p>
+    <h1 class="hero-h1 reveal reveal-delay-1">
+      知名度がなくても、<br>
+      <span class="accent-line">意欲の高い人財が集まる</span>
+      採用の秘密
+    </h1>
+    <p class="hero-lead reveal reveal-delay-2">
+      「採れない・辞める・育たない」という三重苦は、<strong style="color:var(--white)">「よく知らない」</strong>という
+      1つの根っこから生まれています。<br>
+      YOXILの5つのステップで、採用を賭け事から<strong style="color:var(--white)">再現可能な仕組み</strong>へ変えます。
+    </p>
+    <div class="hero-meta reveal reveal-delay-3">
+      <div class="meta-pill"><span class="pill-icon">📅</span><strong>開催日：</strong>2025年〇月〇日（〇）</div>
+      <div class="meta-pill"><span class="pill-icon">🕙</span><strong>時間：</strong>10:00〜11:00（60分）</div>
+      <div class="meta-pill"><span class="pill-icon">💻</span><strong>形式：</strong>オンライン（Zoom）</div>
+      <div class="meta-pill"><span class="pill-icon">💰</span><strong>参加費：</strong>無料</div>
+    </div>
+    <div class="hero-cta-group reveal reveal-delay-4">
+      <a href="#register" class="btn-primary">無料で参加申し込みする</a>
+      <a href="#learn" class="btn-secondary">セミナー内容を確認する</a>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PAIN
+══════════════════════════════════════════════ -->
+<section class="pain" id="pain">
+  <div class="container">
+    <p class="section-eyebrow reveal">こんな悩みはありませんか？</p>
+    <h2 class="section-title reveal reveal-delay-1">採用の「三重苦」に<br>心当たりはありませんか</h2>
+    <p class="section-lead reveal reveal-delay-2">
+      毎年採用活動をしているのに、同じ問題が繰り返される——<br>
+      その理由は、採用の「根っこ」に手をつけていないからです。
+    </p>
+    <div class="pain-grid">
+      <div class="pain-card reveal reveal-delay-1">
+        <div class="num">01</div>
+        <h3>採れない</h3>
+        <p>求人を出しても応募が来ない。来ても「なんか違う」人ばかり。採用費だけがかかり続ける。</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-2">
+        <div class="num">02</div>
+        <h3>辞める</h3>
+        <p>せっかく採用・研修しても3ヶ月〜1年で離職。採用・育成コストが繰り返し消えていく。</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-3">
+        <div class="num">03</div>
+        <h3>育たない</h3>
+        <p>入社しても期待した戦力にならない。「なぜあの人は採れたのか」が再現できない。</p>
+      </div>
+    </div>
+    <div class="pain-footer reveal">
+      <div class="arrow">→</div>
+      <p>
+        この3つはすべて、<strong>「よく知らない」</strong>という1つの根っこからつながっています。<br>
+        <strong>自社の強みを知らない。採るべき人を知らない。伝え方を知らない。</strong>だから賭け事になる。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     ROOT CAUSE
+══════════════════════════════════════════════ -->
+<section class="rootcause">
+  <div class="container">
+    <div class="quote-block">
+      <p class="quote-main reveal">
+        採用がうまくいかない本当の理由は<br>
+        <em>「よく知らない」から起きている</em>
+      </p>
+      <p class="quote-sub reveal reveal-delay-1">
+        採用できない企業の多くは、企業の魅力をうまく言語化できていません。<br>
+        採るべき人を知らず、伝え方を知らず、馴染ませ方も育て方も知らない。<br>
+        YOXILはこの「5つのよく知る」を、連鎖するステップで解決します。
+      </p>
+    </div>
+    <div class="know-grid">
+      <div class="know-card kc-y reveal reveal-delay-1">
+        <span class="kc-letter">Y</span>
+        <div class="kc-know">自社をよく知る</div>
+        <div class="kc-desc">活躍社員のアンケートで<br>「選ばれる3つの理由」を発見</div>
+      </div>
+      <div class="know-card kc-o reveal reveal-delay-2">
+        <span class="kc-letter">O</span>
+        <div class="kc-know">人をよく知る</div>
+        <div class="kc-desc">AIパーソナリティ診断で<br>採用基準を科学的に定義</div>
+      </div>
+      <div class="know-card kc-x reveal reveal-delay-3">
+        <span class="kc-letter">X</span>
+        <div class="kc-know">伝え方をよく知る</div>
+        <div class="kc-desc">YとOの成果を<br>採用HP・Indeed広告で発信</div>
+      </div>
+      <div class="know-card kc-i reveal reveal-delay-4">
+        <span class="kc-letter">I</span>
+        <div class="kc-know">馴染ませ方をよく知る</div>
+        <div class="kc-desc">90日間の構造化オンボーディングで<br>定着を仕組み化</div>
+      </div>
+      <div class="know-card kc-l reveal reveal-delay-5">
+        <span class="kc-letter">L</span>
+        <div class="kc-know">育て方をよく知る</div>
+        <div class="kc-desc">人×AI対話の<br>リフレクションサイクルで継続成長</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FRAMEWORK CHAIN
+══════════════════════════════════════════════ -->
+<section class="framework">
+  <div class="container">
+    <p class="section-eyebrow reveal">解決策</p>
+    <h2 class="section-title reveal reveal-delay-1">採用の入口から育成の出口まで<br>価値が連鎖する5ステップ</h2>
+    <p class="section-lead reveal reveal-delay-2">
+      各要素は独立したツールではなく、前の要素が次の要素のインプットになる<strong style="color:var(--white)">連鎖構造</strong>です。
+    </p>
+    <div class="chain-row">
+      <div class="chain-item ci-y reveal reveal-delay-1">
+        <span class="ci-letter">Y</span>
+        <span class="ci-en1">Yield</span>
+        <span class="ci-en2">Assessment</span>
+        <span class="ci-jp">組織の強み評価</span>
+        <span class="ci-know">自社をよく知る</span>
+      </div>
+      <div class="chain-arrow reveal">›</div>
+      <div class="chain-item ci-o reveal reveal-delay-2">
+        <span class="ci-letter">O</span>
+        <span class="ci-en1">Originality</span>
+        <span class="ci-en2">Diagnosis</span>
+        <span class="ci-jp">個性診断</span>
+        <span class="ci-know">人をよく知る</span>
+      </div>
+      <div class="chain-arrow reveal">›</div>
+      <div class="chain-item ci-x reveal reveal-delay-3">
+        <span class="ci-letter">X</span>
+        <span class="ci-en1">eXposure</span>
+        <span class="ci-en2">Strategy</span>
+        <span class="ci-jp">企業価値の露出戦略</span>
+        <span class="ci-know">伝え方をよく知る</span>
+      </div>
+      <div class="chain-arrow reveal">›</div>
+      <div class="chain-item ci-i reveal reveal-delay-4">
+        <span class="ci-letter">I</span>
+        <span class="ci-en1">Integration</span>
+        <span class="ci-en2">Program</span>
+        <span class="ci-jp">人材統合プログラム</span>
+        <span class="ci-know">馴染ませ方をよく知る</span>
+      </div>
+      <div class="chain-arrow reveal">›</div>
+      <div class="chain-item ci-l reveal reveal-delay-5">
+        <span class="ci-letter">L</span>
+        <span class="ci-en1">Learning</span>
+        <span class="ci-en2">System</span>
+        <span class="ci-jp">継続的学習システム</span>
+        <span class="ci-know">育て方をよく知る</span>
+      </div>
+    </div>
+    <div class="chain-summary reveal">
+      <p>
+        Yで<strong>誰に響くかを知り</strong>、Oで<strong>誰を採るかを定め</strong>、<br>
+        Xで<strong>どう伝えるかを設計し</strong>、Iで<strong>どう馴染ませるかを実行し</strong>、Lで<strong>どう育てるかを継続する</strong>。<br>
+        これが、採用から組織強化まで価値が連鎖的に拡張する一貫した流れです。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     LEARN
+══════════════════════════════════════════════ -->
+<section class="learn" id="learn">
+  <div class="container">
+    <p class="section-eyebrow reveal">セミナーで学べること</p>
+    <h2 class="section-title reveal reveal-delay-1">60分で「採用の再現性」を<br>手に入れる</h2>
+    <div class="learn-grid">
+      <div class="learn-card reveal reveal-delay-1">
+        <div class="lc-icon">🎯</div>
+        <div>
+          <h4>採用がうまくいかない「本当の理由」</h4>
+          <p>給与・知名度・応募数の問題ではない。根本原因を1時間で明確化。採用の三重苦がなぜ起きるかを構造的に理解します。</p>
+        </div>
+      </div>
+      <div class="learn-card reveal reveal-delay-2">
+        <div class="lc-icon">🔬</div>
+        <div>
+          <h4>YOXILフレームワークの全体像</h4>
+          <p>Y→O→X→I→L の5ステップが連鎖する仕組みを解説。独立したツールではなく、前の要素が次のインプットになる設計思想を学びます。</p>
+        </div>
+      </div>
+      <div class="learn-card reveal reveal-delay-3">
+        <div class="lc-icon">📋</div>
+        <div>
+          <h4>明日から始められる最初の一手</h4>
+          <p>A4一枚のYアンケートから始まる「選ばれる3つの理由」の言語化。最初に着手すべきステップを御社の状況に合わせて特定します。</p>
+        </div>
+      </div>
+      <div class="learn-card reveal reveal-delay-4">
+        <div class="lc-icon">🤖</div>
+        <div>
+          <h4>AIパーソナリティ診断の活用法</h4>
+          <p>大手250社以上が導入するAI診断ツールを中小企業の採用戦略に統合する方法。感覚採用からデータ採用への転換を具体的に解説します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PROOF
+══════════════════════════════════════════════ -->
+<section class="proof">
+  <div class="container">
+    <p class="section-eyebrow reveal">実績</p>
+    <h2 class="section-title reveal reveal-delay-1">すでに多くの中小企業で<br>成果が出ています</h2>
+    <div class="stats-row">
+      <div class="stat-block reveal reveal-delay-1">
+        <span class="stat-val">250<small style="font-size:28px">社+</small></span>
+        <span class="stat-label">AIパーソナリティ診断<br>導入企業数（2025年2月）</span>
+      </div>
+      <div class="stat-block reveal reveal-delay-2">
+        <span class="stat-val">95<small style="font-size:28px">%</small></span>
+        <span class="stat-label">Iプログラム導入企業の<br>90日定着率KPI目標</span>
+      </div>
+      <div class="stat-block reveal reveal-delay-3">
+        <span class="stat-val">3<small style="font-size:28px">日</small></span>
+        <span class="stat-label">X戦略導入後<br>最速で3名の応募獲得</span>
+      </div>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card reveal reveal-delay-1">
+        <p>Yアンケートをやってみて、「うちにはこんな強みがあったのか」と初めて気づきました。今まで採用で伝えられていなかったことが、言葉になった感覚です。</p>
+        <div class="voice-meta">建設業・代表取締役（従業員15名）</div>
+      </div>
+      <div class="voice-card reveal reveal-delay-2">
+        <p>AI診断を採用に組み込んでから、「なんとなく合わなかった」という離職が激減しました。組織に何が必要かが数値で見えるのは、経営判断にも使えます。</p>
+        <div class="voice-meta">介護事業・人事マネージャー（従業員42名）</div>
+      </div>
+      <div class="voice-card reveal reveal-delay-3">
+        <p>求人コピーをYOXIL流に変えたら、Indeed掲載3日で3件の応募。しかも「この会社で働きたい」という動機が明確な人からでした。クオリティが全然違います。</p>
+        <div class="voice-meta">製造業・総務部長（従業員28名）</div>
+      </div>
+      <div class="voice-card reveal reveal-delay-4">
+        <p>90日のオンボーディングプログラムを導入してから、半年後の在籍率が大きく改善。毎年繰り返していた採用コストの無駄がなくなりました。</p>
+        <div class="voice-meta">飲食チェーン・経営企画（従業員60名）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SPEAKER
+══════════════════════════════════════════════ -->
+<section class="speaker">
+  <div class="container">
+    <p class="section-eyebrow reveal">登壇者</p>
+    <div class="speaker-inner">
+      <div class="speaker-avatar reveal">👤</div>
+      <div>
+        <h3 class="speaker-name reveal reveal-delay-1">〇〇　〇〇</h3>
+        <p class="speaker-title reveal reveal-delay-1">YOXILワークス代表 ／ 採用マーケティングコンサルタント</p>
+        <p class="speaker-bio reveal reveal-delay-2">
+          中小零細企業を専門とした採用・定着・戦力化コンサルタント。累計3,000人超の採用面接支援、250社以上へのAIパーソナリティ診断導入実績を持つ。<br>
+          「採用を賭け事から再現可能な仕組みへ」をテーマに、YOXILフレームワークを体系化。不動産管理・売上促進・QCと幅広い業種でのコンサルティング経験を採用支援に統合している。
+        </p>
+        <div class="speaker-tags reveal reveal-delay-3">
+          <span class="speaker-tag">採用マーケティング</span>
+          <span class="speaker-tag">AIパーソナリティ診断</span>
+          <span class="speaker-tag">中小企業専門</span>
+          <span class="speaker-tag">定着率改善</span>
+          <span class="speaker-tag">オンボーディング設計</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     DETAILS
+══════════════════════════════════════════════ -->
+<section class="details">
+  <div class="container">
+    <p class="section-eyebrow reveal">開催概要</p>
+    <h2 class="section-title reveal reveal-delay-1">セミナー詳細</h2>
+    <div class="detail-box reveal reveal-delay-2">
+      <div class="detail-row">
+        <div class="detail-label">開催日時</div>
+        <div class="detail-value"><strong>2025年〇月〇日（〇曜日）　10:00〜11:00</strong></div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">開催形式</div>
+        <div class="detail-value">オンライン（Zoom使用）<br>※URLは申込み後にメールでお送りします</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">参加費</div>
+        <div class="detail-value"><span class="free">無料</span></div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">対象者</div>
+        <div class="detail-value">
+          中小零細企業の経営者・役員・人事担当者<br>
+          採用活動に課題を感じているすべての方<br>
+          <span style="color:var(--lgray);font-size:13px">（従業員数5〜200名規模の企業様を特に歓迎します）</span>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">定員</div>
+        <div class="detail-value"><strong>30名</strong>（先着順）</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">当日の特典</div>
+        <div class="detail-value">
+          🎁 <strong style="color:var(--gold)">Yアンケートシート（活躍社員インタビューテンプレート）</strong>を全員にプレゼント<br>
+          🎁 <strong style="color:var(--gold)">個別相談（30分・無料）</strong>への優先参加権
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">主催</div>
+        <div class="detail-value">YOXILワークス</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA / REGISTER
+══════════════════════════════════════════════ -->
+<section class="cta-section" id="register">
+  <div class="container cta-inner">
+    <div class="cta-badge">🎟 参加申し込み　定員30名・先着順</div>
+    <h2 class="cta-h2 reveal">採用を賭け事から<br>再現可能な仕組みへ</h2>
+    <p class="cta-sub reveal reveal-delay-1">
+      今日、この一歩を踏み出してください。<br>
+      参加費無料・60分で御社の採用課題の根本が明確になります。
+    </p>
+
+    <div class="form-card reveal reveal-delay-2">
+      <div class="form-title">
+        <span>📝</span> 参加申し込みフォーム
+      </div>
+      <form id="regForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>お名前<span class="required">必須</span></label>
+            <input type="text" name="name" placeholder="山田　太郎" required>
+          </div>
+          <div class="form-group">
+            <label>フリガナ</label>
+            <input type="text" name="kana" placeholder="ヤマダ　タロウ">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>メールアドレス<span class="required">必須</span></label>
+          <input type="email" name="email" placeholder="example@company.co.jp" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>会社名<span class="required">必須</span></label>
+            <input type="text" name="company" placeholder="〇〇株式会社" required>
+          </div>
+          <div class="form-group">
+            <label>役職・部署</label>
+            <input type="text" name="position" placeholder="代表取締役">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>従業員数</label>
+          <select name="employees">
+            <option value="">選択してください</option>
+            <option value="1-9">1〜9名</option>
+            <option value="10-29">10〜29名</option>
+            <option value="30-99">30〜99名</option>
+            <option value="100-199">100〜199名</option>
+            <option value="200+">200名以上</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>採用で最も困っていること（任意）</label>
+          <textarea name="concern" placeholder="例：応募が来ない、採用しても辞めてしまう、育たない…など自由にご記入ください"></textarea>
+        </div>
+        <button type="submit" class="form-submit">無料参加を申し込む →</button>
+        <p class="form-note">
+          送信をもって<a href="#">プライバシーポリシー</a>に同意したものとみなします。<br>
+          確認メールは24時間以内にお送りします。
+        </p>
+      </form>
+      <div class="success-msg" id="successMsg">
+        ✅ 申し込みを受け付けました！<br>
+        ご登録のメールアドレスに確認メールをお送りします。
+      </div>
+
+      <div class="bonus-box">
+        <div class="bonus-icon">🎁</div>
+        <p>
+          <strong>本日のお申し込み特典：</strong><br>
+          参加者全員に「Yアンケートシート（活躍社員インタビューテンプレート）」をプレゼント。
+          A4一枚から始まる採用改革の最初の一歩をすぐに踏み出せます。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════════ -->
+<section class="faq">
+  <div class="container">
+    <p class="section-eyebrow reveal">よくある質問</p>
+    <h2 class="section-title reveal reveal-delay-1">FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span><span class="q-prefix">Q.</span>うちは小さな会社（従業員10名以下）でも参加できますか？</span>
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">はい、ぜひご参加ください。YOXILは少人数の中小零細企業こそ最大の効果を発揮します。大企業には難しい「カルチャーフィット採用」こそが、中小企業の最大の武器だからです。</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span><span class="q-prefix">Q.</span>今の採用のやり方が全部ダメということになりますか？</span>
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">いいえ。YOXILは現在の採用活動を否定するものではありません。すでにやっていることに「根拠と連鎖」を持たせる構造です。今の取り組みをより効果的にするためのフレームワークです。</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span><span class="q-prefix">Q.</span>セミナー後に営業や勧誘はありますか？</span>
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">強引な営業は一切行いません。セミナー後に個別相談（任意・無料・30分）のご案内をしますが、参加するかどうかはご自身でお決めください。個別相談は「まず御社の課題を一緒に整理する」場です。</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span><span class="q-prefix">Q.</span>どこから始めればいいかわかりません。</span>
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">まずYのアンケートから。活躍社員1名にA4一枚のアンケートを渡すだけで始められます。難しい準備は一切不要です。セミナー内でその具体的なやり方をお伝えします。</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span><span class="q-prefix">Q.</span>録画や見逃し配信はありますか？</span>
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">今回は録画・アーカイブ配信は予定しておりません。ライブ参加でのインタラクティブな質疑応答を大切にしているためです。ぜひ当日リアルタイムでご参加ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">YOXIL<span>.</span>WORKS</div>
+  <p style="font-size:13px;color:var(--lgray);margin-top:4px;">活躍人財採用マーケティング</p>
+  <p class="footer-copy">© 2025 YOXILワークス　All Rights Reserved.</p>
+</footer>
+
+<!-- ── STICKY BAR ── -->
+<div class="sticky-bar" id="stickyBar">
+  <div>
+    <strong>YOXIL流 採用マーケティングセミナー</strong>
+    <p>参加費無料・60分・定員30名（先着順）</p>
+  </div>
+  <a href="#register">今すぐ申し込む →</a>
+</div>
+
+<script>
+// ── Reveal on scroll ────────────────────────────────
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(r => observer.observe(r));
+
+// ── FAQ accordion ─────────────────────────────────
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// ── Sticky bar ────────────────────────────────────
+const stickyBar = document.getElementById('stickyBar');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > 600) stickyBar.classList.add('show');
+  else stickyBar.classList.remove('show');
+  lastScroll = y;
+});
+
+// ── Form submit ───────────────────────────────────
+document.getElementById('regForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = '送信中…';
+  btn.style.opacity = '0.7';
+  // Simulate async submit
+  setTimeout(() => {
+    e.target.style.display = 'none';
+    document.getElementById('successMsg').classList.add('show');
+    stickyBar.classList.remove('show');
+  }, 1200);
+});
+
+// ── Smooth nav CTA ────────────────────────────────
+document.querySelectorAll('a[href="#register"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
